@@ -1,0 +1,30 @@
+
+.nav{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    width: auto;
+    height: 60px;
+   
+}
+
+.nav img{
+    margin-left: 35px;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.menu ul li{
+    margin-left: 24px;
+    
+}
+
+.menu ul li a{
+    text-decoration: none;
+}
