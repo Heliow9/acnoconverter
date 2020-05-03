@@ -1,0 +1,48 @@
+.content-welcome{
+    margin: 0 auto;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+}
+
+
+.welcome{
+    margin: 5px;
+    width: 1080px;
+    max-width: 1080px;
+    height: auto;
+    background-color: white;
+    border-radius: 3px;
+    
+    
+  
+}
+
+.card-welcome{
+ width: 100%;
+ max-width: 350px;
+ height: 300px;
+ margin: 17px;
+ float: left;
+ margin: 0 auto;
+ padding:0 10px;
+ display: flex;
+ flex-direction: column;
+ align-self: center;
+ justify-content: center;
+ 
+
+}
+
+.card-welcome img{
+    width: 45px;
+    height: 45px;
+    margin-top: 30px;
+    align-self:center;
+}
+
+.card-welcome article{
+ text-align: center;
+}

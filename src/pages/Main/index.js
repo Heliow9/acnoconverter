@@ -1,56 +1,48 @@
 import React, { useState } from 'react';
-
-import axios from 'axios';
-import pdImage from '../../assets/123.svg';
+import '../Main/styles.css';
+import Lampada from '../../assets/lampada.svg';
+import Seguranca from '../../assets/seguranca.svg';
+import Like from '../../assets/like.svg'
+import Qualidade from '../../assets/qualidade.svg'
+import Cloud from '../../assets/cloud.svg'
+import Knife from '../../assets/knife.svg'
 export default function Main() {
-
-    const [file, setFile] = useState(null);
-    console.log(file)
-
-    function HandlerCad(e) {
-        e.preventDefault();
-
-        const data = new FormData();
-        data.append('file', file);
-
-        const options = {
-            onuploadProgress: (progressEvent) => {
-                const { loaded, total } = progressEvent;
-                let percent = Math.floor((loaded * 100) / total);
-                console.log(`${loaded}kb até ${total}kb | {${percent}%}`)
-            }
-        }
-
-        axios.post('http://localhost:3333/convertToPDF', data, options).then(result => {
-            if (result) {
-                window.location = result.data;
-            }
-        })
-            .catch(error => {
-                console.error(error.message)
-            });
-
-
-    }
 
 
     return (
         <div className="container">
-           
-            <div className="content">
-                <h2>Conversor PDF Online</h2>
-                <p>Converta facilmente de e para PDF em segundos.</p>
-                <div className="putPDF">
-                    <div className="formPDF">
-                        <form onSubmit={HandlerCad} encType="multipart/form-data" >
-                            <input accept=".doc,.docx" className="fileinput" type="file" id="file" name="file" onChange={event => { setFile(event.target.files[0]) }}></input>
-                            <label for="file" className="labelinput">
-                                <div className="inputImage">
-                                    <img src={pdImage} />
-                                </div>
-                            </label>
-                            <button type="submit" className="btnConv">COMPRESS</button>
-                        </form>
+
+            <div className="content-welcome">
+                <div className="welcome">
+                    <div className="card-welcome">
+                        <img src={Lampada} />
+                        <h4>Como converter?</h4>
+                        <article>Arraste e solte o seu arquivo no conversor de PDF on-line. Arquivos de Word, Excel, PPT e imagens serão convertidos para PDF. Arquivos em PDF serão convertidos para o tipo de arquivo escolhido.</article>
+                    </div>
+                    <div className="card-welcome">
+                        <img src={Seguranca} />
+                        <h4>Não se preocupe com a segurança.</h4>
+                        <article>Arraste e solte o seu arquivo no conversor de PDF on-line. Arquivos de Word, Excel, PPT e imagens serão convertidos para PDF. Arquivos em PDF serão convertidos para o tipo de arquivo escolhido.</article>
+                    </div>
+                    <div className="card-welcome">
+                        <img src={Like} />
+                        <h4>Utilize em todos os dispositivos.</h4>
+                        <article>Arraste e solte o seu arquivo no conversor de PDF on-line. Arquivos de Word, Excel, PPT e imagens serão convertidos para PDF. Arquivos em PDF serão convertidos para o tipo de arquivo escolhido.</article>
+                    </div>
+                    <div className="card-welcome">
+                        <img src={Qualidade} />
+                        <h4>Ótima qualidade.</h4>
+                        <article>Arraste e solte o seu arquivo no conversor de PDF on-line. Arquivos de Word, Excel, PPT e imagens serão convertidos para PDF. Arquivos em PDF serão convertidos para o tipo de arquivo escolhido.</article>
+                    </div>
+                    <div className="card-welcome">
+                        <img src={Cloud} />
+                        <h4>Acesse de qualquer lugar.</h4>
+                        <article>Arraste e solte o seu arquivo no conversor de PDF on-line. Arquivos de Word, Excel, PPT e imagens serão convertidos para PDF. Arquivos em PDF serão convertidos para o tipo de arquivo escolhido.</article>
+                    </div>
+                    <div className="card-welcome">
+                        <img src={Knife} />
+                        <h4>Converta para PDF e outros tipos de arquivo.</h4>
+                        <article>Você pode criar e converter PDFs em um único local. O nosso criador de PDF é compatível com: Excel, Word, PPT, JPG, PNG, BMP, TIFF e GIF</article>
                     </div>
                 </div>
 

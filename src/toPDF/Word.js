@@ -9,7 +9,7 @@ export default function Word() {
     const [percent, setPercent] = useState(0)
     const [onClick, setOnclick] = useState(false)
 
-
+    console.log(Wordfile);
     function HandlerCad(e) {
         console.log(Wordfile);
         e.preventDefault();
@@ -27,6 +27,8 @@ export default function Word() {
             BtnHiden.remove();
             alert('Selecione novamente um arquivo!');
             setOnclick(false);
+            setInitial(0);
+            setTotalValue(0)
 
 
         }
@@ -90,7 +92,7 @@ export default function Word() {
                 <div className="putPDF">
                     <div className="formPDF">
                         <form encType="multipart/form-data" onSubmit={HandlerCad} >
-                            <input accept=".doc,.docx" className="fileinput" type="file" id="file" name="file" onChange={event => { setWordFile(event.target.files[0]) }}></input>
+                            <input accept=".doc,.docx" className="fileinput" type="file" id="file" name="file" onChange={(ev)=>{setWordFile(ev.target.files[0])}}></input>
                             <label for="file" className="labelinput">
                                 <div className="inputImage">
                                     <img src={pdImage} />
